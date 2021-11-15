@@ -1,0 +1,28 @@
+.hk {
+    fill: none;
+    stroke: palevioletred;
+    stroke-width: 2;
+}
+
+.london {
+    fill: none;
+    stroke: slateblue;
+    stroke-width: 2;
+}
+
+.sydney {
+    fill: none;
+    stroke: goldenrod;
+    stroke-width: 2;
+}
+
+.toronto {
+    fill: none;
+    stroke: lightseagreen;
+    stroke-width: 2;
+}
+
+.bar {
+    fill: lightseagreen;
+    opacity: 60%;
+}

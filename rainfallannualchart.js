@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       bottom: 30,
       left: 40
     },
-    width = 600 - margin.left - margin.right,
+    width = 400 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
   // set the ranges

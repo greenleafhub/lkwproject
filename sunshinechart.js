@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
             bottom: 50,
             left: 40
         },
-        svgWidth = 600,
+        svgWidth = 400,
         svgHeight = 300,
         width = svgWidth - margin.left - margin.right,
         height = svgHeight - margin.top - margin.bottom;

@@ -52,95 +52,102 @@
             within room temperature.
 
         </div>
- <!-- import Vue -->
+ 
+ 
+   <!-- import Vue -->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/buefy/dist/components/table"></script>
     <script src="https://unpkg.com/buefy/dist/components/input"></script>
 
 
     <div id="app">
+
         <div class="columns is-mobile is-multiline">
             <div class="column">
-                <table class="table is-striped">
-                    <thead>
-                        <th>Hong Kong</th>
+                <table class="table">
+                    <thead v-for="item in filters">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
                         <tr>
                             <th>Month</th>
-                            <th>Max. °C</th>
                             <th>Min. °C</th>
+                            <th>Max. °C</th>
                         </tr>
-                        <tr v-for="item in filters">
-                            <td>{{ item.Month }}</td>
-                            <td>{{ item.Maxtemp }}</td>
-                            <td>{{ item.Mintemp }}</td>
-                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
+
                     </thead>
                 </table>
             </div>
-
             <div class="column">
-                <table class="table is-striped">
-                    <thead>
-                        <th>London</th>
-                        <tr>
-                            <th>Month</th>
-                            <th>Max. °C</th>
-                            <th>Min. °C</th>
-                        </tr>
-                        <tr v-for="item in filters2">
-                            <td>{{ item.Month }}</td>
-                            <td>{{ item.Maxtemp }}</td>
-                            <td>{{ item.Mintemp }}</td>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-
-             <div class="column">
                 <table class="table">
-                    <thead>
-                        <th>Sydney</th>
+                    <thead v-for="item in filters2">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
                         <tr>
                             <th>Month</th>
-                            <th>Max. °C</th>
                             <th>Min. °C</th>
+                            <th>Max. °C</th>
                         </tr>
-                        <tr v-for="item in filters3">
-                            <td>{{ item.Month }}</td>
-                            <td>{{ item.Maxtemp }}</td>
-                            <td>{{ item.Mintemp }}</td>
-                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
+
                     </thead>
                 </table>
             </div>
-
-             <div class="column">
+            <div class="column">
                 <table class="table">
-                    <thead>
-                        <th>Toronto</th>
+                    <thead v-for="item in filters3">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
                         <tr>
                             <th>Month</th>
-                            <th>Max. °C</th>
                             <th>Min. °C</th>
+                            <th>Max. °C</th>
                         </tr>
-                        <tr v-for="item in filters4">
-                            <td>{{ item.Month }}</td>
-                            <td>{{ item.Maxtemp }}</td>
-                            <td>{{ item.Mintemp }}</td>
-                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
+
                     </thead>
                 </table>
             </div>
+            <div class="column">
+                <table class="table">
+                    <thead v-for="item in filters4">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
+                        <tr>
+                            <th>Month</th>
+                            <th>Min. °C</th>
+                            <th>Max. °C</th>
+                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
 
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
 
     <script>
-        var app = new Vue({
+       var app = new Vue({
             el: "#app",
             async mounted() {
 
-                var response = await fetch("https://api.npoint.io/cfd3845a239f796d56e5");
+                var response = await fetch("https://api.npoint.io/cdbb11536e0322ac5f2c");
 
                 if (response.ok) {
                     this.data = await response.json();
@@ -155,16 +162,16 @@
             methods: {},
             computed: {
                 filters() {
-                    return this.data.filter(item => item.City === 'Hong Kong')
+                    return this.data.filter(item => item.city === 'HK')
                 },
                 filters2() {
-                    return this.data.filter(item => item.City === 'London')
+                    return this.data.filter(item => item.city === 'London')
                 },
                  filters3() {
-                    return this.data.filter(item => item.City === 'Sydney')
+                    return this.data.filter(item => item.city === 'Sydney')
                 },
                  filters4() {
-                    return this.data.filter(item => item.City === 'Toronto')
+                    return this.data.filter(item => item.city === 'Toronto')
                 },
             }
         });

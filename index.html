@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Placeholder for charts</title>
+    <title>Climate comparison between Hong Kong, London, Sydney and Toronto</title>
     <!-- buefy stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
 </head>
@@ -15,51 +15,257 @@
     <!-- d3js javascript (V5) -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
+    <section class="container">
 
-    <section id="charts" class="columns is-multiline is-mobile">
+ <h4 class="subtitle is-4">Climate comparison between Hong Kong, London, Sydney and Toronto</h4>
+    <p>Because of the ongoing social unrest, more and more Hong Kong people want to move to other countries. According
+        to a recent survey, most people who want to migrate are interested in relocating to Canada or Australia. (1)
+        After the United Kingdom eased immigration rules for Hong Kong residents in July 2020 (2), many Hong Kong people
+        are also considering moving to the United Kingdom. When moving to a different city, climate is often an
+        important factor to consider. In this report, I will compare the climate of Hong Kong with three popular
+        emigration destinations, namely London in the United Kingdom, Sydney in Australia, and Toronto in Canada, using
+        monthly meteorological normals data of the four cities from 1981-2010 retrieved from government website (3-6). I
+        will analyze which city is the best for Hong Kong people to emigrate based on the climate.</p><br>
+
+    <section id="charts" class="columns">
+
+        <div class="column is-half">
+            <h4 class="subtitle is-4">Temperature</h4>
+            Hong Kong, as a subtropical city, has the highest mean temperature around the year, ranging from
+            mean daily minimum at 14.5°C during January, to mean daily maximum at 31.4°C during July. The
+            temperature difference between the day and night is the smallest, as shown in Fig. 1, the gap
+            between maximum and minimum temperatures in Hong Kong is the smallest of all four cities. 5 months
+            of summer Hong Kong (May to September) has a higher temperature than the optimal room temperature
+            range (18-24°C), which may cause heat related health risks without cooling intervention (7).
+            London, Sydney, and Toronto all have lower mean temperatures and larger ranges of temperature
+            difference throughout the year when compared with Hong Kong. As shown in Fig. 1, the bell shapes of
+            temperature trends of London, Toronto and Sydney are taller than Hong Kong. The gap between mean
+            daily minimum temperature and mean daily maximum temperature is larger, indicating the temperature
+            differences between the day and night in these three cities are higher than Hong Kong. People living
+            in these cities would need to prepare extra clothing to accommodate temperature differences when
+            going out. It is worth noting that the lowest minimum temperature of Toronto during December to
+            March is below 0°C, which may pose huge challenges to accommodate.
+            London and Toronto have 12 months and 11 months of mean daily minimum temperature lower than the
+            room temperature, which shows that the nights of these two cities are relatively cold, which is
+            harmful to health without proper insulation practices (7). Sydney citizens, on the other hand, can
+            enjoy 4 months of comfortable nights (December to March) where the mean daily minimum temperature is
+            within room temperature.
+
+        </div>
+ <!-- import Vue -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/buefy/dist/components/table"></script>
+    <script src="https://unpkg.com/buefy/dist/components/input"></script>
+
+
+    <div id="app">
+        <div class="columns is-mobile is-multiline">
+            <div class="column">
+                <table class="table is-striped">
+                    <thead>
+                        <th>Hong Kong</th>
+                        <tr>
+                            <th>Month</th>
+                            <th>Max. °C</th>
+                            <th>Min. °C</th>
+                        </tr>
+                        <tr v-for="item in filters">
+                            <td>{{ item.Month }}</td>
+                            <td>{{ item.Maxtemp }}</td>
+                            <td>{{ item.Mintemp }}</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="column">
+                <table class="table is-striped">
+                    <thead>
+                        <th>London</th>
+                        <tr>
+                            <th>Month</th>
+                            <th>Max. °C</th>
+                            <th>Min. °C</th>
+                        </tr>
+                        <tr v-for="item in filters2">
+                            <td>{{ item.Month }}</td>
+                            <td>{{ item.Maxtemp }}</td>
+                            <td>{{ item.Mintemp }}</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+             <div class="column">
+                <table class="table">
+                    <thead>
+                        <th>Sydney</th>
+                        <tr>
+                            <th>Month</th>
+                            <th>Max. °C</th>
+                            <th>Min. °C</th>
+                        </tr>
+                        <tr v-for="item in filters3">
+                            <td>{{ item.Month }}</td>
+                            <td>{{ item.Maxtemp }}</td>
+                            <td>{{ item.Mintemp }}</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+             <div class="column">
+                <table class="table">
+                    <thead>
+                        <th>Toronto</th>
+                        <tr>
+                            <th>Month</th>
+                            <th>Max. °C</th>
+                            <th>Min. °C</th>
+                        </tr>
+                        <tr v-for="item in filters4">
+                            <td>{{ item.Month }}</td>
+                            <td>{{ item.Maxtemp }}</td>
+                            <td>{{ item.Mintemp }}</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            async mounted() {
+
+                var response = await fetch("https://api.npoint.io/cfd3845a239f796d56e5");
+
+                if (response.ok) {
+                    this.data = await response.json();
+                    console.log(JSON.stringify(this.data));
+                } else {
+                    console.log(response.statusText);
+                }
+            },
+            data: () => ({
+                data: [] // initialise to an empty array
+            }),
+            methods: {},
+            computed: {
+                filters() {
+                    return this.data.filter(item => item.City === 'Hong Kong')
+                },
+                filters2() {
+                    return this.data.filter(item => item.City === 'London')
+                },
+                 filters3() {
+                    return this.data.filter(item => item.City === 'Sydney')
+                },
+                 filters4() {
+                    return this.data.filter(item => item.City === 'Toronto')
+                },
+            }
+        });
+    </script>
+
+
+    </section>
+
+    <section id="charts" class="columns">
+
+        <div class="column is-one-third">
+            <h4 class="subtitle is-4">Sunshine</h4>
+            Lack of sunshine is related to multiple health issues, ranging from vitamin D insufficiency (8) to
+            higher suicide rates (9). Fig. 2a & 2b shows London has the least sunshine throughout the year at only
+            1540 hours per year, following Hong Kong and Toronto at 1836 and 2066 hours per year respectively.
+            Sydney has the most sunshine per year at 2593 hours. Sydney also has the most even hours of sunshine
+            throughout the year, ranging from 176.7 hours in May to 246.0 hours in November. Toronto has the
+            most uneven hours of sunshine throughout the year, ranging from a minimum of 78.1 hours in December,
+            to 279.6 hours in July. 6 months (September to February) of London have the least amount of sunshine
+            compared to other countries, meaning London citizens will have the longest period of time not being
+            able to enjoy sunshine, and the positive health effects it brings.
+
+        </div>
+
         <!-- sunshine chart -->
         <div class="column">
-            <h1>Sunshine</h1>
+            <h1>Fig. 2a Sunshine</h1>
             <div id="sunshineChart"></div>
             <script src="sunshinechart.js"></script>
         </div>
 
         <!-- sunshine annual chart -->
         <div class="column">
-            <h1>Sunshine (annual)</h1>
+            <h1>Fig. 2b Sunshine (annual)</h1>
             <div id="sunshineannualchart"></div>
             <script src="sunshineannualchart.js"></script>
         </div>
 
+
+
+    </section>
+
+    <section id="charts" class="columns">
+
+        <div class="column is-one-third">
+            <h4 class="subtitle is-4">Rainy days and rainfall</h4>
+            Rainy days, especially days with heavy rainfall, would pose difficulties for transportation, and
+            sometimes cause floods. As shown in Fig. 3a & 3b, Hong Kong has the highest number of rainy days
+            throughout the year at 137.63, followed by London and Toronto, with Sydney being the city with least
+            rainy days at 98.30. Hong Kong has notably more rainy days throughout the summer (May to September),
+            London, Sydney have relatively even numbers of rainy days throughout the year, while Toronto have
+            less rainy days during the winter (December to February).
+
+        </div>
+
         <!-- rainfall chart -->
         <div class="column">
-            <h1>Rainfall</h1>
+            <h1>Fig. 3a Rainfall</h1>
             <div id="rainfallChart"></div>
             <script src="rainfallchart.js"></script>
         </div>
 
         <!-- rainfall annual chart -->
         <div class="column">
-            <h1>Rainfall (annual)</h1>
+            <h1>Fig. 3b Rainfall (annual)</h1>
             <div id="rainfallannualchart"></div>
             <script src="rainfallannualchart.js"></script>
         </div>
 
+    </section>
+
+    <section id="charts" class="columns">
+
+        <div class="column is-one-third">
+            <h4 class="subtitle is-4"></h4>
+            For amounts of rainfall throughout the year, Fig. 4a & 4b shows Hong Kong has significantly higher
+            rainfall than the other three countries at 2,399 yearly, and most of the heavy rainfalls occur
+            during summer (May to September). London, Sydney and Toronto all have relatively even amounts of rainfall
+            throughout
+            the year. This indicates that Hong Kong is most likely to suffer from heavy rains and people have to
+            travel through rainy weathers throughout most of the summer.
+
+        </div>
+
         <!-- days of rainfall chart -->
         <div class="column">
-            <h1>Days of Rainfall</h1>
+            <h1>Fig. 4a Days of Rainfall</h1>
             <div id="daysofrainfallchart"></div>
             <script src="daysofrainfallchart.js"></script>
         </div>
 
         <!-- days of rainfall annual chart -->
         <div class="column">
-            <h1>Days of Rainfall (annual)</h1>
+            <h1>Fig. 4b Days of Rainfall (annual)</h1>
             <div id="daysofrainfallannualchart"></div>
             <script src="daysofrainfallannualchart.js"></script>
         </div>
 
     </section>
+
+</section>
 
 </body>
 

@@ -44,7 +44,20 @@ document.addEventListener("DOMContentLoaded", function () {
           .attr("x", function(d) { return x(d.City); })
           .attr("width", x.bandwidth())
           .attr("y", function(d) { return y(d.Sunshine); })
-          .attr("height", function(d) { return height - y(d.Sunshine); });
+          .attr("height", function(d) { return height - y(d.Sunshine); })
+          .on("mousemove", function (d) {
+            tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 70 + "px")
+              .style("display", "inline-block")
+              .html((d.City) + "<br>" + (d.Sunshine) + " hours per year");
+          })
+          .on("mouseout", function (d) {
+            tooltip.style("display", "none");
+          });
+    
+        //tooltip ref: https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
+        var tooltip = d3.select("body").append("div").attr("class", "toolTip");;;
     
       // add the x Axis
       svg.append("g")

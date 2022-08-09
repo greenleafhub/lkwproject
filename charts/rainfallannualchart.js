@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // append the svg object to the body of the page
   // append a 'group' element to 'svg'
   // moves the 'group' element to the top left margin
-  var svg = d3.select("#daysofrainfallannualchart").append("svg")
+  var svg = d3.select("#rainfallannualchart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // format the data
     data.forEach(function (d) {
-      d.DaysOfRainfall = +d.DaysOfRainfall;
+      d.Rainfall = +d.Rainfall;
     });
 
     // Scale the range of the data in the domains
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return d.City;
     }));
     y.domain([0, d3.max(data, function (d) {
-      return d.DaysOfRainfall;
+      return d.Rainfall;
     })]);
 
     // append the rectangles for the bar chart
@@ -55,11 +55,24 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .attr("width", x.bandwidth())
       .attr("y", function (d) {
-        return y(d.DaysOfRainfall);
+        return y(d.Rainfall);
       })
       .attr("height", function (d) {
-        return height - y(d.DaysOfRainfall);
+        return height - y(d.Rainfall);
+      })
+      .on("mousemove", function (d) {
+        tooltip
+          .style("left", d3.event.pageX - 50 + "px")
+          .style("top", d3.event.pageY - 70 + "px")
+          .style("display", "inline-block")
+          .html((d.City) + "<br>" + (d.Rainfall) + " mm per year");
+      })
+      .on("mouseout", function (d) {
+        tooltip.style("display", "none");
       });
+
+    //tooltip ref: https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
+    var tooltip = d3.select("body").append("div").attr("class", "toolTip");;
 
     // add the x Axis
     svg.append("g")
@@ -75,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("y", 6)
       .attr("dy", "0.5em")
       .attr("fill", "#000")
-      .text("Total Days of rainfall");
+      .text("Total Rainfall (mm)");
 
   });
 })

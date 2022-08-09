@@ -1,0 +1,449 @@
+[{
+    "city": "HK",
+    "weather": [{
+        "month": 1,
+        "monthname": "January",
+        "Maxtemp": 18.6,
+        "Mintemp": 14.5,
+        "Sunshine": 143,
+        "Rainfall": 24.7,
+        "DaysOfRainfall": 5.37
+      },
+      {
+        "month": 2,
+        "monthname": "February",
+        "Maxtemp": 18.9,
+        "Mintemp": 15,
+        "Sunshine": 94.2,
+        "Rainfall": 54.4,
+        "DaysOfRainfall": 9.07
+      },
+      {
+        "month": 3,
+        "monthname": "March",
+        "Maxtemp": 21.4,
+        "Mintemp": 17.2,
+        "Sunshine": 90.8,
+        "Rainfall": 82.2,
+        "DaysOfRainfall": 10.9
+      },
+      {
+        "month": 4,
+        "monthname": "April",
+        "Maxtemp": 25,
+        "Mintemp": 20.8,
+        "Sunshine": 101.7,
+        "Rainfall": 174.7,
+        "DaysOfRainfall": 12
+      },
+      {
+        "month": 5,
+        "monthname": "May",
+        "Maxtemp": 28.4,
+        "Mintemp": 24.1,
+        "Sunshine": 140.4,
+        "Rainfall": 304.7,
+        "DaysOfRainfall": 14.67
+      },
+      {
+        "month": 6,
+        "monthname": "June",
+        "Maxtemp": 30.2,
+        "Mintemp": 26.2,
+        "Sunshine": 146.1,
+        "Rainfall": 456.1,
+        "DaysOfRainfall": 19.07
+      },
+      {
+        "month": 7,
+        "monthname": "July",
+        "Maxtemp": 31.4,
+        "Mintemp": 26.8,
+        "Sunshine": 212,
+        "Rainfall": 376.5,
+        "DaysOfRainfall": 17.6
+      },
+      {
+        "month": 8,
+        "monthname": "August",
+        "Maxtemp": 31.1,
+        "Mintemp": 26.6,
+        "Sunshine": 188.9,
+        "Rainfall": 432.2,
+        "DaysOfRainfall": 16.93
+      },
+      {
+        "month": 9,
+        "monthname": "September",
+        "Maxtemp": 30.1,
+        "Mintemp": 25.8,
+        "Sunshine": 172.3,
+        "Rainfall": 327.6,
+        "DaysOfRainfall": 14.67
+      },
+      {
+        "month": 10,
+        "monthname": "October",
+        "Maxtemp": 27.8,
+        "Mintemp": 23.7,
+        "Sunshine": 193.9,
+        "Rainfall": 100.9,
+        "DaysOfRainfall": 7.43
+      },
+      {
+        "month": 11,
+        "monthname": "November",
+        "Maxtemp": 24.1,
+        "Mintemp": 19.8,
+        "Sunshine": 180.1,
+        "Rainfall": 37.6,
+        "DaysOfRainfall": 5.47
+      },
+      {
+        "month": 12,
+        "monthname": "December",
+        "Maxtemp": 20.2,
+        "Mintemp": 15.9,
+        "Sunshine": 172.2,
+        "Rainfall": 26.8,
+        "DaysOfRainfall": 4.47
+      }
+    ]
+  },
+  {
+    "city": "London",
+    "weather": [{
+        "month": 1,
+        "monthname": "January",
+        "Maxtemp": 7.1,
+        "Mintemp": 2,
+        "Sunshine": 57.5,
+        "Rainfall": 64.7,
+        "DaysOfRainfall": 12
+      },
+      {
+        "month": 2,
+        "monthname": "February",
+        "Maxtemp": 7.4,
+        "Mintemp": 1.7,
+        "Sunshine": 76.4,
+        "Rainfall": 46.6,
+        "DaysOfRainfall": 9.7
+      },
+      {
+        "month": 3,
+        "monthname": "March",
+        "Maxtemp": 10.5,
+        "Mintemp": 3.5,
+        "Sunshine": 107.1,
+        "Rainfall": 48.9,
+        "DaysOfRainfall": 10.2
+      },
+      {
+        "month": 4,
+        "monthname": "April",
+        "Maxtemp": 13.3,
+        "Mintemp": 5,
+        "Sunshine": 151.6,
+        "Rainfall": 51.5,
+        "DaysOfRainfall": 9.9
+      },
+      {
+        "month": 5,
+        "monthname": "May",
+        "Maxtemp": 16.8,
+        "Mintemp": 8,
+        "Sunshine": 192.2,
+        "Rainfall": 58,
+        "DaysOfRainfall": 9.5
+      },
+      {
+        "month": 6,
+        "monthname": "June",
+        "Maxtemp": 19.9,
+        "Mintemp": 10.9,
+        "Sunshine": 191,
+        "Rainfall": 54.2,
+        "DaysOfRainfall": 9
+      },
+      {
+        "month": 7,
+        "monthname": "July",
+        "Maxtemp": 22.4,
+        "Mintemp": 13.2,
+        "Sunshine": 199.9,
+        "Rainfall": 50.4,
+        "DaysOfRainfall": 8.5
+      },
+      {
+        "month": 8,
+        "monthname": "August",
+        "Maxtemp": 22,
+        "Mintemp": 13.1,
+        "Sunshine": 193,
+        "Rainfall": 64.4,
+        "DaysOfRainfall": 8.9
+      },
+      {
+        "month": 9,
+        "monthname": "September",
+        "Maxtemp": 18.8,
+        "Mintemp": 11,
+        "Sunshine": 140.8,
+        "Rainfall": 56.9,
+        "DaysOfRainfall": 8.8
+      },
+      {
+        "month": 10,
+        "monthname": "October",
+        "Maxtemp": 14.6,
+        "Mintemp": 8.1,
+        "Sunshine": 109.9,
+        "Rainfall": 77.7,
+        "DaysOfRainfall": 11
+      },
+      {
+        "month": 11,
+        "monthname": "November",
+        "Maxtemp": 10.3,
+        "Mintemp": 4.8,
+        "Sunshine": 69.4,
+        "Rainfall": 68.3,
+        "DaysOfRainfall": 11.4
+      },
+      {
+        "month": 12,
+        "monthname": "December",
+        "Maxtemp": 7.4,
+        "Mintemp": 2.5,
+        "Sunshine": 51.6,
+        "Rainfall": 62.9,
+        "DaysOfRainfall": 11.4
+      }
+    ]
+  },
+  {
+    "city": "Sydney",
+    "weather": [{
+        "month": 1,
+        "monthname": "January",
+        "Maxtemp": 26.5,
+        "Mintemp": 19.6,
+        "Sunshine": 235.6,
+        "Rainfall": 96,
+        "DaysOfRainfall": 8.9
+      },
+      {
+        "month": 2,
+        "monthname": "February",
+        "Maxtemp": 26.5,
+        "Mintemp": 19.7,
+        "Sunshine": 194.925,
+        "Rainfall": 136.6,
+        "DaysOfRainfall": 9
+      },
+      {
+        "month": 3,
+        "monthname": "March",
+        "Maxtemp": 25.4,
+        "Mintemp": 18.1,
+        "Sunshine": 210.8,
+        "Rainfall": 109.4,
+        "DaysOfRainfall": 9.6
+      },
+      {
+        "month": 4,
+        "monthname": "April",
+        "Maxtemp": 23.3,
+        "Mintemp": 15.3,
+        "Sunshine": 186,
+        "Rainfall": 137,
+        "DaysOfRainfall": 8.5
+      },
+      {
+        "month": 5,
+        "monthname": "May",
+        "Maxtemp": 20.6,
+        "Mintemp": 12.5,
+        "Sunshine": 176.7,
+        "Rainfall": 117.6,
+        "DaysOfRainfall": 9.5
+      },
+      {
+        "month": 6,
+        "monthname": "June",
+        "Maxtemp": 18,
+        "Mintemp": 9.8,
+        "Sunshine": 183,
+        "Rainfall": 117.8,
+        "DaysOfRainfall": 8
+      },
+      {
+        "month": 7,
+        "monthname": "July",
+        "Maxtemp": 17.4,
+        "Mintemp": 8.7,
+        "Sunshine": 198.4,
+        "Rainfall": 80.9,
+        "DaysOfRainfall": 7.7
+      },
+      {
+        "month": 8,
+        "monthname": "August",
+        "Maxtemp": 18.9,
+        "Mintemp": 9.7,
+        "Sunshine": 238.7,
+        "Rainfall": 91.8,
+        "DaysOfRainfall": 6
+      },
+      {
+        "month": 9,
+        "monthname": "September",
+        "Maxtemp": 21.2,
+        "Mintemp": 12,
+        "Sunshine": 234,
+        "Rainfall": 69.2,
+        "DaysOfRainfall": 6.2
+      },
+      {
+        "month": 10,
+        "monthname": "October",
+        "Maxtemp": 22.8,
+        "Mintemp": 14.4,
+        "Sunshine": 241.8,
+        "Rainfall": 82.2,
+        "DaysOfRainfall": 8
+      },
+      {
+        "month": 11,
+        "monthname": "November",
+        "Maxtemp": 23.7,
+        "Mintemp": 16.3,
+        "Sunshine": 246,
+        "Rainfall": 104.8,
+        "DaysOfRainfall": 9
+      },
+      {
+        "month": 12,
+        "monthname": "December",
+        "Maxtemp": 25.5,
+        "Mintemp": 18.3,
+        "Sunshine": 238.7,
+        "Rainfall": 79.4,
+        "DaysOfRainfall": 7.9
+      }
+    ]
+  },
+  {
+    "city": "Toronto",
+    "weather": [{
+        "month": 1,
+        "monthname": "January",
+        "Maxtemp": -0.7,
+        "Mintemp": -6.7,
+        "Sunshine": 85.9,
+        "Rainfall": 29.1,
+        "DaysOfRainfall": 5.4
+      },
+      {
+        "month": 2,
+        "monthname": "February",
+        "Maxtemp": 0.4,
+        "Mintemp": -5.6,
+        "Sunshine": 111.3,
+        "Rainfall": 29.7,
+        "DaysOfRainfall": 4.8
+      },
+      {
+        "month": 3,
+        "monthname": "March",
+        "Maxtemp": 4.7,
+        "Mintemp": -1.9,
+        "Sunshine": 161,
+        "Rainfall": 33.6,
+        "DaysOfRainfall": 7.9
+      },
+      {
+        "month": 4,
+        "monthname": "April",
+        "Maxtemp": 11.5,
+        "Mintemp": 4.1,
+        "Sunshine": 180,
+        "Rainfall": 61.1,
+        "DaysOfRainfall": 11.2
+      },
+      {
+        "month": 5,
+        "monthname": "May",
+        "Maxtemp": 18.4,
+        "Mintemp": 9.9,
+        "Sunshine": 227.7,
+        "Rainfall": 82,
+        "DaysOfRainfall": 12.7
+      },
+      {
+        "month": 6,
+        "monthname": "June",
+        "Maxtemp": 23.8,
+        "Mintemp": 14.9,
+        "Sunshine": 259.6,
+        "Rainfall": 70.9,
+        "DaysOfRainfall": 11
+      },
+      {
+        "month": 7,
+        "monthname": "July",
+        "Maxtemp": 26.6,
+        "Mintemp": 18,
+        "Sunshine": 279.6,
+        "Rainfall": 63.9,
+        "DaysOfRainfall": 10.4
+      },
+      {
+        "month": 8,
+        "monthname": "August",
+        "Maxtemp": 25.5,
+        "Mintemp": 17.4,
+        "Sunshine": 245.6,
+        "Rainfall": 81.1,
+        "DaysOfRainfall": 10.2
+      },
+      {
+        "month": 9,
+        "monthname": "September",
+        "Maxtemp": 21,
+        "Mintemp": 13.4,
+        "Sunshine": 194.4,
+        "Rainfall": 84.7,
+        "DaysOfRainfall": 11.1
+      },
+      {
+        "month": 10,
+        "monthname": "October",
+        "Maxtemp": 14,
+        "Mintemp": 7.4,
+        "Sunshine": 154.3,
+        "Rainfall": 64.3,
+        "DaysOfRainfall": 11.7
+      },
+      {
+        "month": 11,
+        "monthname": "November",
+        "Maxtemp": 7.5,
+        "Mintemp": 2.3,
+        "Sunshine": 88.9,
+        "Rainfall": 75.4,
+        "DaysOfRainfall": 10.9
+      },
+      {
+        "month": 12,
+        "monthname": "December",
+        "Maxtemp": 2.1,
+        "Mintemp": -3.1,
+        "Sunshine": 78.1,
+        "Rainfall": 38.2,
+        "DaysOfRainfall": 7
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "City": "Hong Kong",
+    "Maxtemp": 25.6,
+    "Mintemp": 21.4,
+    "Sunshine": 1835.6,
+    "Rainfall": 2398.5,
+    "DaysOfRainfall": 137.63
+  },
+  {
+    "City": "London",
+    "Maxtemp": 14.3,
+    "Mintemp": 7,
+    "Sunshine": 1540.4,
+    "Rainfall": 704.5,
+    "DaysOfRainfall": 120.1
+  },
+  {
+    "City": "Sydney",
+    "Maxtemp": 22.5,
+    "Mintemp": 14.5,
+    "Sunshine": 2593.275,
+    "Rainfall": 1222.7,
+    "DaysOfRainfall": 98.3
+  },
+  {
+    "City": "Toronto",
+    "Maxtemp": 12.9,
+    "Mintemp": 5.9,
+    "Sunshine": 2066.3,
+    "Rainfall": 714,
+    "DaysOfRainfall": 114.1
+  }
+]

@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Placeholder for table</title>
+    <!-- buefy stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+
+</head>
+
+<body>
+
+    <!-- import Vue -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/buefy/dist/components/table"></script>
+    <script src="https://unpkg.com/buefy/dist/components/input"></script>
+
+
+    <div id="app">
+
+        <div class="columns is-mobile is-multiline">
+            <div class="column">
+                <table class="table">
+                    <thead v-for="item in filters">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
+                        <tr>
+                            <th>Month</th>
+                            <th>Min. °C</th>
+                            <th>Max. °C</th>
+                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
+
+                    </thead>
+                </table>
+            </div>
+            <div class="column">
+                <table class="table">
+                    <thead v-for="item in filters2">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
+                        <tr>
+                            <th>Month</th>
+                            <th>Min. °C</th>
+                            <th>Max. °C</th>
+                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
+
+                    </thead>
+                </table>
+            </div>
+            <div class="column">
+                <table class="table">
+                    <thead v-for="item in filters3">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
+                        <tr>
+                            <th>Month</th>
+                            <th>Min. °C</th>
+                            <th>Max. °C</th>
+                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
+
+                    </thead>
+                </table>
+            </div>
+            <div class="column">
+                <table class="table">
+                    <thead v-for="item in filters4">
+                        <tr>
+                            <th>{{item.city}}</th>
+                        </tr>
+                        <tr>
+                            <th>Month</th>
+                            <th>Min. °C</th>
+                            <th>Max. °C</th>
+                        </tr>
+                        <tr v-for="item2 in item.weather">
+                            <td>{{item2.monthname}}</td>
+                            <td>{{item2.Mintemp}}</td>
+                            <td>{{item2.Maxtemp}}</td>
+
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       var app = new Vue({
+            el: "#app",
+            async mounted() {
+
+                var response = await fetch("https://api.npoint.io/cdbb11536e0322ac5f2c");
+
+                if (response.ok) {
+                    this.data = await response.json();
+                    console.log(JSON.stringify(this.data));
+                } else {
+                    console.log(response.statusText);
+                }
+            },
+            data: () => ({
+                data: [] // initialise to an empty array
+            }),
+            methods: {},
+            computed: {
+                filters() {
+                    return this.data.filter(item => item.city === 'HK')
+                },
+                filters2() {
+                    return this.data.filter(item => item.city === 'London')
+                },
+                 filters3() {
+                    return this.data.filter(item => item.city === 'Sydney')
+                },
+                 filters4() {
+                    return this.data.filter(item => item.city === 'Toronto')
+                },
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -26,3 +26,13 @@
     fill: lightseagreen;
     opacity: 60%;
 }
+
+.toolTip {
+    position: absolute;
+    display: none;
+    min-width: 20px;
+    height: auto;
+    background: none repeat scroll 0 0 #ffffff;
+    padding: 4px;
+    text-align: center;
+  }
